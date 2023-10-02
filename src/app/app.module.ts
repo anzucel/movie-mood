@@ -10,6 +10,7 @@ import { ScanComponent } from './views/scan/scan.component';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { RecommendComponent } from './views/recommend/recommend.component';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RecommendComponent } from './views/recommend/recommend.component';
     AppRoutingModule,
     MultiSelectModule,
     TreeSelectModule,
-    DropdownModule
+    DropdownModule,
+    FieldsetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
