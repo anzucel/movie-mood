@@ -5,7 +5,32 @@
 </div>
 <div class="content">
     <div class="left-container">
-
+        <div class="slider-effectCoverflow">
+            <swiper
+                [effect]="'coverflow'"
+                [allowSlideNext]="true"
+                [spaceBetween]="20"
+                [grabCursor]="true"
+                [centeredSlides]="true"
+                [slidesPerView]="'auto'"
+                [coverflowEffect]="{
+                    rotate: 20,
+                    stretch: 20,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: false
+                }"    
+                [pagination]="true"
+                [navigation]="true"
+                class="mySwiper"
+            >
+                <ng-template swiperSlide><img src="../../../assets/img/poster/movie1.jpg"></ng-template>
+                <ng-template swiperSlide><img src="../../../assets/img/poster/movie2.jpg"></ng-template>
+                <ng-template swiperSlide><img src="../../../assets/img/poster/movie3.jpg"></ng-template>
+                <ng-template swiperSlide><img src="../../../assets/img/poster/movie4.jpg"></ng-template>
+                <ng-template swiperSlide><img src="../../../assets/img/poster/movie5.jpg"></ng-template>
+            </swiper>
+        </div>
     </div>
     <div class="right-container">
         <p-fieldset legend="Black Phone">

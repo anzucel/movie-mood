@@ -11,6 +11,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { RecommendComponent } from './views/recommend/recommend.component';
 import { FieldsetModule } from 'primeng/fieldset';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FieldsetModule } from 'primeng/fieldset';
     MultiSelectModule,
     TreeSelectModule,
     DropdownModule,
-    FieldsetModule
+    FieldsetModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
