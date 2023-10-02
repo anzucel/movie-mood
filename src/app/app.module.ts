@@ -9,12 +9,14 @@ import { HomeComponent } from './views/home/home.component';
 import { ScanComponent } from './views/scan/scan.component';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { DropdownModule } from 'primeng/dropdown';
+import { RecommendComponent } from './views/recommend/recommend.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ScanComponent
+    ScanComponent,
+    RecommendComponent
   ],
   imports: [
     BrowserModule,

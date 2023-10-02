@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { ScanComponent } from './views/scan/scan.component';
+import { RecommendComponent } from './views/recommend/recommend.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'scan',
     component: ScanComponent
+  },
+  {
+    path: 'recommend',
+    component: RecommendComponent
   }
 ];
 

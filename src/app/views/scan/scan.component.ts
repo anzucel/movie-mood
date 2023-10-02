@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 interface Movie {
   name: string;
@@ -20,7 +21,7 @@ export class ScanComponent {
     movie3: new FormControl('')
   })
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.movies = [
@@ -33,6 +34,6 @@ export class ScanComponent {
   }
 
   next() {
-
+    this.router.navigate(['/recommend']);
   }
 }
