@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     font-family: 'Sintony', sans-serif;
+    color: white;
 }
 
 .label {
@@ -107,4 +108,14 @@ body{
 
 input:focus {
     outline: 3px solid var(--color-purple);
+}
+
+.button-label {
+    text-align: center; 
+    color: white; 
+    font-size: 18px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1.50px; 
+    word-wrap: break-word
 }

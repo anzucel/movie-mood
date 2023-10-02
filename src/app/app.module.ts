@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { HomeComponent } from './views/home/home.component';
 import { ScanComponent } from './views/scan/scan.component';
-
+import { TreeSelectModule } from 'primeng/treeselect';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { ScanComponent } from './views/scan/scan.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MultiSelectModule,
+    TreeSelectModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

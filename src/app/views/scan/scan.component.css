@@ -1,11 +1,21 @@
+.content {
+    height: 98vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
 .left-container {
     height: 100%;
-    width: 50%;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex: 1;
 
     .image {
         width: 70%; 
@@ -13,5 +23,68 @@
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%); 
         border-radius: 9999px; 
         border: 6px #1400FF solid;
+    }
+}
+
+.right-container {
+    height: 100%;
+    flex: 1;
+   
+    .right-content {
+        margin-top: 5%;
+
+        .logo {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+    
+            .image {
+                width: 60%;
+            }
+        }
+        
+        .form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            /* width: 40%; */
+            align-items: center;
+    
+            .label-content {
+                margin-bottom: 50px;
+            }
+    
+            .select-content {
+                margin-bottom: 20px;
+                width: 70%;
+    
+                .select{
+                    width: 70%;
+                }
+        
+                .p-dropdown {
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.20);
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 26px;
+                    border: none;
+        
+                    .p-dropdown-label {
+                        color: white;
+                    }
+                }
+            }
+        }
+    
+    
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: center;
+            margin-top: 50px;
+        }
     }
 }
