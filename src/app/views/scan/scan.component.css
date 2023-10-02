@@ -1,0 +1,17 @@
+.left-container {
+    height: 100%;
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+        width: 70%; 
+        height: 70%; 
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%); 
+        border-radius: 9999px; 
+        border: 6px #1400FF solid;
+    }
+}

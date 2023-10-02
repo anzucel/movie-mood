@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Sintony', sans-serif;
+}
+
+.label {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 70%;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.20);
+    gap: 10px;
+    font-size: 20px;  
+    color: white;
+    border: none;
+    margin-bottom: 40px;
+}
+
+/* .button {
+    transition: all .5s ease;
+    width: 50%;
+    height: 60px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    background: linear-gradient(90deg, #4710C1 0%, #7857FF 51%, #819BFD 100%);
+    border-radius: 26px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+    border-color: none;
+} */
+
+.button {
+    width: 70%;
+    height: 60px;
+    border: none;
+    outline: none;
+    /* color: #fff; */
+    /* background: #111; */
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    cursor: pointer;
+    position: relative;
+    border-radius: 26px; 
+    z-index: 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.20);
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+}
+
+.button:before {
+    content: '';
+    background: linear-gradient(90deg, #4710C1 0%, #7857FF 51%, #819BFD 100%);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button:active {
+    color: #000
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:hover:before {
+    opacity: 1;
+}
+
+.button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #111; */
+    left: 0;
+    top: 0;
+    border-radius: 26px;
+}
+
+input:focus {
+    outline: 3px solid var(--color-purple);
+}

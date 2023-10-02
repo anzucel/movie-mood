@@ -1,0 +1,21 @@
+<div class="centered-container">
+    <div class="logo">
+        <img src="../../../assets/img/movie_mood_logo.png">
+    </div>
+    <form [formGroup]="profileForm" class="form" (ngSubmit)="nextForm()">
+        <!-- <div> -->
+            <label class="label">¿Cuál es tu nombre?</label>
+            <input class="input" type="text" formControlName="name">
+    
+            <label class="label">¿Qué géneros de cine son tus favoritos?</label>
+            <p-multiSelect [options]="genders" class="select" formControlName="movieGenres" defaultLabel="Selecciona" optionLabel="name" display="chip"></p-multiSelect>
+        
+        <!-- </div> -->
+        <div class="button-container">
+            <button class="button" type="submit" [disabled]="!profileForm.valid">
+                <div style="text-align: center; color: white; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.50px; word-wrap: break-word">SIGUIENTE</div>
+            </button>
+        </div>
+    </form>
+</div>
+  
