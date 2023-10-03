@@ -17,12 +17,12 @@
                 <form [formGroup]="favoriteMoviesForm" class="form" (ngSubmit)="next()">
                     <!-- <div> -->
                     <div class="label-content">
-                        <label class="label">¿Cuáles son tus películas favoritas?</label>
+                        <label class="label">Which are your favorite movies?</label>
                     </div>
 
-                    <input class="input" type="text" formControlName="movie1">
-                    <input class="input" type="text" formControlName="movie2">
-                    <input class="input" type="text" formControlName="movie3">
+                    <input class="input" type="text" placeholder="Type Something..." formControlName="movie1">
+                    <input class="input" type="text" placeholder="Type Something..." formControlName="movie2">
+                    <input class="input" type="text" placeholder="Type Something..." formControlName="movie3">
                     
                     <!-- <div class="select-content">
                         <p-dropdown class="select" formControlName="movie1" [options]="movies" optionLabel="name"></p-dropdown>
@@ -37,7 +37,7 @@
                     <!-- </div> -->
                     <div class="button-container">
                         <button class="button" type="submit">
-                            <div class="button-label">Recomendar</div>
+                            <div class="button-label">Recommend</div>
                         </button>
                     </div>
                 </form>

@@ -14,6 +14,7 @@ SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 })
 export class RecommendComponent {
   Elenco: string = "Zucely Raxón,";
+  isChanged: boolean = false;
 
   constructor(private router: Router,
               private confirmationService: ConfirmationService, 
@@ -31,6 +32,14 @@ export class RecommendComponent {
       reject: () => {
         // this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected' });
       }
-  });
+    });
+  }
+
+  onSwiper(swiper: any) {
+    console.log(swiper);
+  }
+  onSlideChange(event: any) {
+    this.isChanged = !this.isChanged;
+    console.log('slide change', event[0].activeIndex); //card activa 
   }
 } 

@@ -1,20 +1,20 @@
 <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
-<div class="centered-container">
+<div class="centered-container" transition-style="in:circle:hesitate">
     <div class="logo">
         <img src="../../../assets/img/movie_mood_logo.png">
     </div>
     <form [formGroup]="profileForm" class="form" (ngSubmit)="nextForm()">
         <!-- <div> -->
-            <label class="label">¿Cuál es tu nombre?</label>
+            <label class="label">What's your name?</label>
             <input class="input" type="text" formControlName="name">
     
-            <label class="label">¿Qué géneros de cine son tus favoritos?</label>
+            <label class="label">What are your favorite film genres?</label>
             <p-multiSelect [options]="genders" class="select" formControlName="movieGenres" defaultLabel="Selecciona" optionLabel="name" display="chip"></p-multiSelect>
         
         <!-- </div> -->
         <div class="button-container">
             <button class="button" type="submit">
-                <div class="button-label">SIGUIENTE</div>
+                <div class="button-label">Next</div>
             </button>
         </div>
     </form>

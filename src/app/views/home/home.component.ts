@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/scan']);
     }
     else{
-      this.messageService.add({severity: 'warn', summary: 'Campos Imcompletos', detail: 'Es necesario completar todos los campos'});
+      this.messageService.add({severity: 'warn', summary: 'Incomplete Fields', detail: 'All fields must be completed'});
     }
   }
 }

@@ -9,6 +9,8 @@
     <div class="left-container">
         <div class="slider-effectCoverflow">
             <swiper
+                (swiper)="onSwiper($event)"
+                (slideChange)="onSlideChange($event)"
                 [effect]="'coverflow'"
                 [allowSlideNext]="true"
                 [spaceBetween]="20"
@@ -26,6 +28,9 @@
                 [navigation]="true"
                 class="mySwiper"
             >
+                <!-- <ng-template swiperSlide *ngFor="let slide of slides">
+                    <img src="" alt="">
+                </ng-template> -->
                 <ng-template swiperSlide><img src="../../../assets/img/poster/movie1.jpg"></ng-template>
                 <ng-template swiperSlide><img src="../../../assets/img/poster/movie2.jpg"></ng-template>
                 <ng-template swiperSlide><img src="../../../assets/img/poster/movie3.jpg"></ng-template>
@@ -35,7 +40,7 @@
         </div>
     </div>
     <div class="right-container">
-        <div class="right-content">
+        <div [ngClass]="{'wipe-down': isChanged}" class="right-content">
             <label class="title">Black Phone</label>
             <p class="description">
                 Te llama Papá La película de Scott Derrickson, basada en el cuento de Joe Hill, nos aproxima a una visión de la infancia teñida
@@ -49,10 +54,10 @@
             </div>
             <div class="button-container">
                 <button class="button" type="submit">
-                    <div class="button-label">Ver Ahora</div>
+                    <div class="button-label">Watch now</div>
                 </button>
                 <button class="button-watch" (click)="exit($event)">
-                    <div class="button-label">Salir</div>
+                    <div class="button-label">Leave</div>
                 </button>
             </div>
         </div>
