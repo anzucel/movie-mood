@@ -47,8 +47,6 @@ body{
     height: 60px;
     border: none;
     outline: none;
-    /* color: #fff; */
-    /* background: #111; */
     padding-left: 20px; 
     padding-right: 20px; 
     padding-top: 10px; 
@@ -69,8 +67,6 @@ body{
     height: 60px;
     border: none;
     outline: none;
-    /* color: #fff; */
-    /* background: #111; */
     padding-left: 20px; 
     padding-right: 20px; 
     padding-top: 10px; 
@@ -104,11 +100,36 @@ body{
     border-radius: 10px;
 }
 
+.button-watch:before {
+    content: '';
+    background: rgba(255, 255, 255, 0.20);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
 .button:active {
     color: #000
 }
 
+.button-watch:active {
+    color: white
+}
+
 .button:active:after {
+    background: transparent;
+}
+
+.button-watch:active:after {
     background: transparent;
 }
 
@@ -116,7 +137,23 @@ body{
     opacity: 1;
 }
 
+.button-watch:hover:before {
+    opacity: 1;
+}
+
 .button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #111; */
+    left: 0;
+    top: 0;
+    border-radius: 26px;
+}
+
+.button-watch:after {
     z-index: -1;
     content: '';
     position: absolute;
