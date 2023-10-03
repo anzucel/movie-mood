@@ -41,6 +41,28 @@ body{
     display: inline-flex;
     border-color: none;
 } */
+.button-watch {
+    background: var(--Blue-Alt, linear-gradient(90deg, #4710C1 3.28%, #7857FF 50.58%, #819BFD 96.22%));
+    width: 70%;
+    height: 60px;
+    border: none;
+    outline: none;
+    /* color: #fff; */
+    /* background: #111; */
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    cursor: pointer;
+    position: relative;
+    border-radius: 26px; 
+    z-index: 0;
+    border-radius: 10px;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+}
 
 .button {
     width: 70%;

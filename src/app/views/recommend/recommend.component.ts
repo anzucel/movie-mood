@@ -10,5 +10,5 @@ SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
   encapsulation:ViewEncapsulation.None
 })
 export class RecommendComponent {
-
+  Elenco: string = "Zucely Raxón,";
 } 

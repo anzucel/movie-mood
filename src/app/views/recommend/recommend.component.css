@@ -10,6 +10,7 @@
     .logo {
         align-items: center;
         display: flex;
+        padding: 10px;
 
         .image {
             width: 20%;
@@ -81,16 +82,36 @@
     .right-container {
         height: 100%;
         flex: 1;
-        padding: 50px;
+        padding: 100px 85px 0px;
         width: 50%;
-       
+        
         .p-fieldset {
             background: rgba(255, 255, 255, 0.20);
             color: white;
         }
-
+        
         .right-content {
-            margin-top: 5%;
+            background-image: url(../../../assets/img/Overlay.png);
+            background-repeat: no-repeat;
+            padding: 35px;
+            border-radius: 20px;
+            /* margin-top: 5%; */
+
+            .title {
+                font-weight: bold;
+                font-size: 30px;
+            }
+
+            .footer {
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+
+                .details {
+                    padding-bottom: 10px;
+                }
+            }
+
                 
             .info-card {
                 margin-top: 40px;
@@ -130,9 +151,17 @@
             .button-container {
                 display: flex;
                 flex-direction: column;
-                width: 40%;
+                width: 100%;
                 align-items: center;
                 margin-top: 50px;
+
+                .button {
+                    margin-bottom: 15px;
+                }
+
+                .button-watch {
+                    margin-bottom: 15px;
+                }
             }
         }
     }
