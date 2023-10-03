@@ -3,6 +3,11 @@
 @import url('~swiper/less/pagination');
 @import url('~swiper/less/effect-coverflow');
 
+.p-button {
+    background: var(--Blue-Alt, linear-gradient(90deg, #4710C1 3.28%, #7857FF 50.58%, #819BFD 96.22%));
+    border: 1px solid var(--Blue-Alt, linear-gradient(90deg, #4710C1 3.28%, #7857FF 50.58%, #819BFD 96.22%));;
+}
+
 .header {
     height: 10%;
     width: 100%;
@@ -165,4 +170,23 @@
             }
         }
     }
+}
+
+.p-dialog .p-dialog-header {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding: 0.5rem;
+}
+
+.p-dialog .p-dialog-content {
+    padding: 6px 0.5rem 1rem 3.5rem;
+}
+
+.p-dialog .p-dialog-footer {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+    width: 4rem;
 }

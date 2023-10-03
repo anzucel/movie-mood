@@ -1,3 +1,9 @@
+<p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
+<div class="header">
+    <button class="icon-button" (click)="goToBack()">
+        <i class="pi pi-angle-left icon"></i>
+    </button>      
+</div>
 <div class="content">
     <div class="container">
         <div class="left-container">
@@ -30,7 +36,7 @@
                 
                     <!-- </div> -->
                     <div class="button-container">
-                        <button class="button" type="submit" [disabled]="!favoriteMoviesForm.valid">
+                        <button class="button" type="submit">
                             <div class="button-label">Recomendar</div>
                         </button>
                     </div>

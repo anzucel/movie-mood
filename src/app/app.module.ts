@@ -12,6 +12,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RecommendComponent } from './views/recommend/recommend.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { SwiperModule } from 'swiper/angular';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { SwiperModule } from 'swiper/angular';
     TreeSelectModule,
     DropdownModule,
     FieldsetModule,
-    SwiperModule
+    SwiperModule,
+    ToastModule,
+    ConfirmPopupModule,
+    ConfirmDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

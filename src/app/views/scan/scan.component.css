@@ -1,5 +1,17 @@
+.icon-button {
+    background: none; 
+    border: none; 
+    padding: 10px;
+    cursor: pointer; 
+    color: white;
+
+    .icon {
+        font-size: 30px;
+    }
+}
+
 .content {
-    height: 98vh;
+    height: 90vh;
     margin: 0;
     padding: 0;
     display: flex;

@@ -1,3 +1,5 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
 <div class="header">
     <div class="logo">
         <img class="image" src="../../../assets/img/movie_mood_logo.png">
@@ -49,7 +51,7 @@
                 <button class="button" type="submit">
                     <div class="button-label">Ver Ahora</div>
                 </button>
-                <button class="button-watch" type="submit">
+                <button class="button-watch" (click)="exit($event)">
                     <div class="button-label">Salir</div>
                 </button>
             </div>

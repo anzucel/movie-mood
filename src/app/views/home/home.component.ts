@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 interface Genders {
   name: string,
@@ -10,7 +11,8 @@ interface Genders {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [MessageService]
 })
 export class HomeComponent implements OnInit {
   inputValue: string = '';
@@ -18,11 +20,12 @@ export class HomeComponent implements OnInit {
   genders!: Genders[];
 
   profileForm = new FormGroup({
-    name: new FormControl(''/*, Validators.required*/),
-    movieGenres: new FormControl('')
+    name: new FormControl('', Validators.required),
+    movieGenres: new FormControl<Genders[]>([], Validators.required)
   })
 
-  constructor(private router: Router) { 
+  constructor(private router: Router,
+              private messageService: MessageService) { 
     this.genders = [
       {name: 'Romance', code: 'Romance'},
       {name: 'Terror', code: 'Terror'},
@@ -34,7 +37,11 @@ export class HomeComponent implements OnInit {
   }
 
   nextForm() {
-    console.log(this.profileForm);
-    this.router.navigate(['/scan']);
+    if(this.profileForm.valid){
+      this.router.navigate(['/scan']);
+    }
+    else{
+      this.messageService.add({severity: 'warn', summary: 'Campos Imcompletos', detail: 'Es necesario completar todos los campos'});
+    }
   }
 }

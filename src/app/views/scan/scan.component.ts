@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 interface Movie {
   name: string;
@@ -10,18 +11,20 @@ interface Movie {
 @Component({
   selector: 'app-scan',
   templateUrl: './scan.component.html',
-  styleUrls: ['./scan.component.css']
+  styleUrls: ['./scan.component.css'],
+  providers: [MessageService]
 })
 export class ScanComponent {
   movies: Movie[] | undefined;
 
   favoriteMoviesForm = new FormGroup({
-    movie1: new FormControl(''/*, Validators.required*/),
-    movie2: new FormControl(''),
-    movie3: new FormControl('')
+    movie1: new FormControl('', Validators.required),
+    movie2: new FormControl('', Validators.required),
+    movie3: new FormControl('', Validators.required)
   })
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private messageService: MessageService) { }
 
   ngOnInit() {
     this.movies = [
@@ -34,6 +37,15 @@ export class ScanComponent {
   }
 
   next() {
-    this.router.navigate(['/recommend']);
+    if(this.favoriteMoviesForm.valid){
+      this.router.navigate(['/recommend']);
+    }
+    else {
+      this.messageService.add({severity: 'warn', summary: 'Campos Imcompletos', detail: 'Es necesario completar todos los campos'});
+    }
+  }
+
+  goToBack() {
+    this.router.navigate(['/home']);
   }
 }
