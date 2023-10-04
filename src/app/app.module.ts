@@ -15,13 +15,15 @@ import { SwiperModule } from 'swiper/angular';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { WebcamComponent } from './views/webcam/webcam.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ScanComponent,
-    RecommendComponent
+    RecommendComponent,
+    WebcamComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 .icon-button {
-    background: none; 
-    border: none; 
+    background: none;
+    border: none;
     padding: 10px;
-    cursor: pointer; 
+    cursor: pointer;
     color: white;
 
     .icon {
@@ -28,13 +28,13 @@
 .left-container {
     height: 100%;
     flex: 1;
-    
+
 
     .image {
-        width: 70%; 
-        height: 70%; 
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%); 
-        border-radius: 9999px; 
+        width: 70%;
+        height: 70%;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%);
+        border-radius: 9999px;
         border: 6px #1400FF solid;
     }
 }
@@ -42,7 +42,7 @@
 .right-container {
     height: 100%;
     flex: 1;
-   
+
     .right-content {
         margin-top: 5%;
 
@@ -51,31 +51,31 @@
             justify-content: center;
             align-items: center;
             display: flex;
-    
+
             .image {
                 width: 60%;
             }
         }
-        
+
         .form {
             margin-top: 40px;
             display: flex;
             flex-direction: column;
             /* width: 40%; */
             align-items: center;
-    
+
             .label-content {
                 margin-bottom: 50px;
             }
-    
+
             .select-content {
                 margin-bottom: 20px;
                 width: 70%;
-    
+
                 .select{
                     width: 70%;
                 }
-        
+
                 .p-dropdown {
                     width: 100%;
                     background: rgba(255, 255, 255, 0.20);
@@ -83,15 +83,15 @@
                     height: 50px;
                     border-radius: 26px;
                     border: none;
-        
+
                     .p-dropdown-label {
                         color: white;
                     }
                 }
             }
         }
-    
-    
+
+
         .button-container {
             display: flex;
             flex-direction: column;

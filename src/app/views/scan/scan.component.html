@@ -2,12 +2,12 @@
 <div class="header">
     <button class="icon-button" (click)="goToBack()">
         <i class="pi pi-angle-left icon"></i>
-    </button>      
+    </button>
 </div>
 <div class="content">
     <div class="container">
         <div class="left-container">
-            <img class="image" src="https://via.placeholder.com/165x165" />
+          <app-webcam></app-webcam>
         </div>
         <div class="right-container">
             <div class="right-content">
@@ -23,7 +23,7 @@
                     <input class="input" type="text" placeholder="Type Something..." formControlName="movie1">
                     <input class="input" type="text" placeholder="Type Something..." formControlName="movie2">
                     <input class="input" type="text" placeholder="Type Something..." formControlName="movie3">
-                    
+
                     <!-- <div class="select-content">
                         <p-dropdown class="select" formControlName="movie1" [options]="movies" optionLabel="name"></p-dropdown>
                     </div>
@@ -33,7 +33,7 @@
                     <div class="select-content">
                         <p-dropdown class="select" formControlName="movie3" [options]="movies" optionLabel="name"></p-dropdown>
                     </div> -->
-                
+
                     <!-- </div> -->
                     <div class="button-container">
                         <button class="button" type="submit">
