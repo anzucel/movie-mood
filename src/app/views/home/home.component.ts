@@ -21,15 +21,31 @@ export class HomeComponent implements OnInit {
 
   profileForm = new FormGroup({
     name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
     movieGenres: new FormControl<Genders[]>([], Validators.required)
   })
 
   constructor(private router: Router,
               private messageService: MessageService) { 
     this.genders = [
+      {name: 'Action', code: 'Action'},
+      {name: 'Adventure', code: 'Adventure'},
+      {name: 'Animation', code: 'Animation'},
+      {name: 'Comedy', code: 'Comedy'},
+      {name: 'Crime', code: 'Crime'},
+      {name: 'Drama', code: 'Drama'},
+      {name: 'Family', code: 'Family'},
+      {name: 'Fantasy', code: 'Fantasy'},
+      {name: 'History', code: 'History'},
+      {name: 'Horror', code: 'Horror'},
+      {name: 'Music', code: 'Music'},
+      {name: 'Mistery', code: 'Mistery'},
       {name: 'Romance', code: 'Romance'},
-      {name: 'Terror', code: 'Terror'},
-      {name: 'Drama', code: 'Drama'}
+      {name: 'Science Fiction', code: 'Science-Fiction'},
+      {name: 'Thriller', code: 'Thriller'},
+      {name: 'TV Movie', code: 'TV-Movie'},
+      {name: 'War', code: 'War'},
+      {name: 'Western', code: 'Western'},
     ]
   }
 
