@@ -28,15 +28,19 @@
 .left-container {
     height: 100%;
     flex: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* padding-left: 45px; */
 
-
-    .image {
+    /* .image {
         width: 70%;
         height: 70%;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%);
         border-radius: 9999px;
         border: 6px #1400FF solid;
-    }
+    } */
 }
 
 .right-container {

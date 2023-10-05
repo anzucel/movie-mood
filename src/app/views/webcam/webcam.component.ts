@@ -8,8 +8,8 @@ import * as faceapi from 'face-api.js';
 })
 export class WebcamComponent implements OnInit {
 
-  WIDTH = 440;
-  HEIGHT = 280;
+  WIDTH = 700;
+  HEIGHT = 800;
 
   @ViewChild('video',{ static: true })
   public video!: ElementRef;
@@ -59,12 +59,13 @@ export class WebcamComponent implements OnInit {
       this.canvas.setAttribute('id', 'canvass');
       this.canvas.setAttribute(
         'style',`position: fixed;
-        top: 0;
-        left: 0;`
+        top: 120px;
+        left: 90px;`
+
       );
       this.displaySize = {
-        width: this.videoInput.width,
-        height: this.videoInput.height,
+        width: 700,
+        height: 540,
       };
       faceapi.matchDimensions(this.canvas, this.displaySize);
       setInterval(async () => {

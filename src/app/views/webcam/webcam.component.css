@@ -1,0 +1,16 @@
+.video-content {
+    height: 535px;
+    width: 535px;
+    /* width: 350px; */
+    /* border-radius: 10px;  */
+    overflow: hidden; 
+    border-radius: 9999px;
+    border: 6px #1400FF solid;
+}
+
+.video {
+    bottom: 137px;
+    position: relative;
+    right: 15%;
+}
+
