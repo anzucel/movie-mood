@@ -8,58 +8,46 @@
 <div class="content">
     <div class="left-container">
         <div class="slider-effectCoverflow">
-            <swiper
-                (swiper)="onSwiper($event)"
-                (slideChange)="onSlideChange($event)"
-                [effect]="'coverflow'"
-                [allowSlideNext]="true"
-                [spaceBetween]="20"
-                [grabCursor]="true"
-                [centeredSlides]="true"
-                [slidesPerView]="'auto'"
-                [coverflowEffect]="{
+            <swiper (swiper)="onSwiper($event)" (slideChange)="onSlideChange($event)" [effect]="'coverflow'"
+                [allowSlideNext]="true" [spaceBetween]="20" [grabCursor]="true" [centeredSlides]="true"
+                [slidesPerView]="'auto'" [coverflowEffect]="{
                     rotate: 20,
                     stretch: 20,
                     depth: 100,
                     modifier: 1,
                     slideShadows: false
-                }"    
-                [pagination]="true"
-                [navigation]="true"
-                class="mySwiper"
-            >
-                <!-- <ng-template swiperSlide *ngFor="let slide of slides">
-                    <img src="" alt="">
-                </ng-template> -->
-                <ng-template swiperSlide><img src="../../../assets/img/poster/movie1.jpg"></ng-template>
-                <ng-template swiperSlide><img src="../../../assets/img/poster/movie2.jpg"></ng-template>
-                <ng-template swiperSlide><img src="../../../assets/img/poster/movie3.jpg"></ng-template>
-                <ng-template swiperSlide><img src="../../../assets/img/poster/movie4.jpg"></ng-template>
-                <ng-template swiperSlide><img src="../../../assets/img/poster/movie5.jpg"></ng-template>
+                }" [pagination]="true" [navigation]="true" class="mySwiper">
+                <ng-container *ngFor="let movie of movies">
+                    <ng-template swiperSlide>
+                        <img [src]="movie.thumbnail" alt="{{ movie.title }}">
+                        
+                    </ng-template>
+                </ng-container>
             </swiper>
         </div>
     </div>
     <div class="right-container">
         <div [ngClass]="{'wipe-down': isChanged}" class="right-content">
-            <label class="title">Black Phone</label>
-            <p class="description">
-                Te llama Papá La película de Scott Derrickson, basada en el cuento de Joe Hill, nos aproxima a una visión de la infancia teñida
-                de un crudo granate aportado por la innegable presencia de la violencia cotidiana ante la que solo se puede responder 
-                madurando.
-            </p>
-            <div class="footer">
-                <label class="details"><b>Elenco:</b> {{Elenco}}</label>
-                <label class="details">Genéro:</label>
-                <label class="details">Clasificación:</label>
-            </div>
-            <div class="button-container">
-                <button class="button" type="submit">
-                    <div class="button-label">Watch now</div>
-                </button>
-                <button class="button-watch" (click)="exit($event)">
-                    <div class="button-label">Leave</div>
-                </button>
-            </div>
+            <ng-container *ngFor="let movie of movies">
+
+
+                <label class="title">{{ movie.title }}</label>
+                <p class="description">{{ movie.extract }}</p>
+                <div class="footer">
+                    <label class="details"><b>Year:</b> {{ movie.year }}</label>
+                    <label class="details"><b>Genre:</b> {{ movie.genres.join(', ') }}</label>
+                    <!-- Add more movie properties as needed -->
+                </div>
+                <div class="button-container">
+                    <button class="button" type="submit">
+                        <div class="button-label">Watch now</div>
+                    </button>
+                    <button class="button-watch" (click)="exit($event)">
+                        <div class="button-label">Leave</div>
+                    </button>
+                </div>
+
+            </ng-container>
         </div>
     </div>
 </div>

@@ -15,6 +15,8 @@ import { SwiperModule } from 'swiper/angular';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './services/data.services';
 
 @NgModule({
   declarations: [
@@ -36,9 +38,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     SwiperModule,
     ToastModule,
     ConfirmPopupModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

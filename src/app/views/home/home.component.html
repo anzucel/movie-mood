@@ -3,7 +3,7 @@
     <div class="logo">
         <img src="../../../assets/img/movie_mood_logo.png">
     </div>
-    <form [formGroup]="profileForm" class="form" (ngSubmit)="nextForm()">
+    <form [formGroup]="profileForm" class="form" (ngSubmit)="enviarDatos()">
         <!-- <div> -->
             <label class="label">What's your name?</label>
             <input class="input" type="text" formControlName="name">
@@ -16,7 +16,7 @@
         
         <!-- </div> -->
         <div class="button-container">
-            <button class="button" type="submit">
+            <button (click)="realizarAccion()" class="button" type="submit">
                 <div class="button-label">Next</div>
             </button>
         </div>
