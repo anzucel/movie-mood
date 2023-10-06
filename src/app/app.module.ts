@@ -17,13 +17,15 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.services';
+import { WebcamComponent } from './views/webcam/webcam.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ScanComponent,
-    RecommendComponent
+    RecommendComponent,
+    WebcamComponent
   ],
   imports: [
     BrowserModule,

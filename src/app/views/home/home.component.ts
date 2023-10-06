@@ -165,4 +165,11 @@ export class HomeComponent implements OnInit {
     console.log('Se ha presionado el botón.');
     // Puedes realizar otras acciones aquí
   }
+
+  validateSelect(event: any) {
+    if(event.value.length > 3) {
+      event.value.pop();
+      this.messageService.add({severity: 'warn', summary: 'Ups', detail: 'Please, only select 3 genres!'});
+    }
+  }
 }

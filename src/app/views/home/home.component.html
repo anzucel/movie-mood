@@ -12,7 +12,7 @@
             <input class="input" type="text" formControlName="email">
     
             <label class="label">What are your favorite film genres?</label>
-            <p-multiSelect [options]="genders" class="select" formControlName="movieGenres" defaultLabel="Selecciona" optionLabel="name" display="chip"></p-multiSelect>
+            <p-multiSelect [options]="genders" (onChange)="validateSelect($event)" class="select" formControlName="movieGenres" defaultLabel="Selecciona" optionLabel="name" display="chip"></p-multiSelect>
         
         <!-- </div> -->
         <div class="button-container">
