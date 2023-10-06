@@ -56,12 +56,13 @@ export class WebcamComponent implements OnInit {
       this.canvas = await faceapi.createCanvasFromMedia(this.videoInput);
       this.canvasEl = this.canvasRef.nativeElement;
       this.canvasEl.appendChild(this.canvas);
-      this.canvas.setAttribute('id', 'canvass');
+      this.canvas.setAttribute('id', 'canvas');
       this.canvas.setAttribute(
-        'style',`position: fixed;
-        top: 120px;
-        left: 90px;`
-
+        'style',`position: absolute;
+        bottom: 0px;
+        left: -72px;
+        z-index: 100`
+        
       );
       this.displaySize = {
         width: 700,

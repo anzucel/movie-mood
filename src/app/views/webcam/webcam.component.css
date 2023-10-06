@@ -6,6 +6,7 @@
     overflow: hidden; 
     border-radius: 9999px;
     border: 6px #1400FF solid;
+    position: relative;
 }
 
 .video {
@@ -14,3 +15,6 @@
     right: 15%;
 }
 
+.canvas-content {
+    position: absolute;
+}
