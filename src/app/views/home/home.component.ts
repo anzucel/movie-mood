@@ -60,4 +60,11 @@ export class HomeComponent implements OnInit {
       this.messageService.add({severity: 'warn', summary: 'Incomplete Fields', detail: 'All fields must be completed'});
     }
   }
+
+  validateSelect(event: any) {
+    if(event.value.length > 3) {
+      event.value.pop();
+      this.messageService.add({severity: 'warn', summary: 'Ups', detail: 'Please, only select 3 genres!'});
+    }
+  }
 }
