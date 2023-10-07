@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import SwiperCore, {Navigation, Pagination, EffectCoverflow} from 'swiper';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DataService } from '../../services/data.services';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
@@ -15,7 +16,7 @@ SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
   encapsulation:ViewEncapsulation.None
 })
 export class RecommendComponent implements OnInit{
-  selectedMovie: any; 
+  selectedMovie: number = 0; 
   movies: any[] = []; // Initialize it as an empty array
   Elenco: string = "Zucely Raxón,";
   isChanged: boolean = false;
@@ -27,9 +28,10 @@ export class RecommendComponent implements OnInit{
 
   constructor(private router: Router,
               private confirmationService: ConfirmationService, 
-              private messageService: MessageService,private dataService: DataService, private http: HttpClient) {}
+              private messageService: MessageService,private dataService: DataService, private http: HttpClient,
+              private cdr: ChangeDetectorRef) {}
 
-  exit(event: Event) {
+  exit() {
     this.confirmationService.confirm({
       // target: event.target as EventTarget,
       message: 'Are you sure that you want to proceed?',
@@ -94,23 +96,17 @@ export class RecommendComponent implements OnInit{
 
   }
  // Function to select a movie and update the selectedMovie variable
- selectMovie(index: number) {
-  this.selectedMovie = this.movies[index];
-}
+//  selectMovie(index: number) {
+//   this.selectedMovie = this.movies[index];
+// }
 
 // Function to handle slide change event
-onSlideChange(event: any) {
-  // Here, you can do something when the slide (movie) changes
-  // For example, you can log the current slide index
-  console.log('Current slide index:', event.activeIndex);
-  this.isChanged = !this.isChanged;
-  // You can also update the selected movie here if needed
-  // For example, if you want to select the movie corresponding to the current slide
-  this.selectedMovie = this.movies[event.activeIndex];
-}
+  async onSlideChange(event: any) {
+    this.selectedMovie = event[0].activeIndex;
+    this.cdr.detectChanges();
+  }
 
   onSwiper(swiper: any) {
     console.log(swiper);
   }
-
 } 

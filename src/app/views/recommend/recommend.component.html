@@ -20,34 +20,30 @@
                 <ng-container *ngFor="let movie of movies">
                     <ng-template swiperSlide>
                         <img [src]="movie.thumbnail" alt="{{ movie.title }}">
-                        
                     </ng-template>
                 </ng-container>
             </swiper>
         </div>
     </div>
     <div class="right-container">
-        <div [ngClass]="{'wipe-down': isChanged}" class="right-content">
-            <ng-container *ngFor="let movie of movies">
-
-
-                <label class="title">{{ movie.title }}</label>
-                <p class="description">{{ movie.extract }}</p>
+        <div *ngIf="movies[selectedMovie]">  
+            <div class="right-content">
+                <label class="title">{{ movies[selectedMovie].title }}</label>
+                <p class="description">{{ movies[selectedMovie].extract }}</p>
                 <div class="footer">
-                    <label class="details"><b>Year:</b> {{ movie.year }}</label>
-                    <label class="details"><b>Genre:</b> {{ movie.genres.join(', ') }}</label>
+                    <label class="details"><b>Year:</b> {{ movies[selectedMovie].year }}</label>
+                    <label class="details"><b>Genre:</b> {{ movies[selectedMovie].genres.join(', ') }}</label>
                     <!-- Add more movie properties as needed -->
                 </div>
                 <div class="button-container">
                     <button class="button" type="submit">
                         <div class="button-label">Watch now</div>
                     </button>
-                    <button class="button-watch" (click)="exit($event)">
+                    <button class="button-watch" (click)="exit()">
                         <div class="button-label">Leave</div>
                     </button>
                 </div>
-
-            </ng-container>
+            </div>
         </div>
     </div>
 </div>
