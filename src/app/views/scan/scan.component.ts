@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { DataService } from '../../services/data.services';
 import { HttpClient } from '@angular/common/http';
+import { LoaderService } from 'src/app/services/loader.service';
 
 interface Movie {
   name: string;
@@ -28,7 +29,8 @@ export class ScanComponent {
   constructor(private router: Router,
     private messageService: MessageService,
     private dataService: DataService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private loader: LoaderService) { }
 
   async ngOnInit() {
     this.movies = [
@@ -42,6 +44,7 @@ export class ScanComponent {
 
   async recommend() {
     try {
+      this.loader.setLoading(true);
       let id = this.dataService.sharedData;
       const formData = this.favoriteMoviesForm.value;
 
@@ -104,8 +107,11 @@ export class ScanComponent {
     // this.dataService.response = JSON.parse(JSON.stringify(response));
     //   console.log(this.dataService.response);
       // Navigate to the next component after getting the response
+      this.loader.setLoading(false);
       this.router.navigate(['/recommend']);
-    } catch (error) {
+    } catch (error: any) {
+      this.loader.setLoading(false);
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: error});
       console.error('Error:', error);
     }
   }

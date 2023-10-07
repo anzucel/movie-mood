@@ -18,6 +18,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.services';
 import { WebcamComponent } from './views/webcam/webcam.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WebcamComponent } from './views/webcam/webcam.component';
     HomeComponent,
     ScanComponent,
     RecommendComponent,
-    WebcamComponent
+    WebcamComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
